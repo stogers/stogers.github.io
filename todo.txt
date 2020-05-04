@@ -1,0 +1,8 @@
+TODO:
+- see if there is a way to avoid pressing enter for newlines
+- get the finger animation and coloring working (webtypist)
+- see if you can show more lines as a time in textbox
+- change keyboard to version 2 symbols 
+- paginate chapters
+- follow https://10fastfingers.com/ lead with features (highlight current word)
+- highlight space bar

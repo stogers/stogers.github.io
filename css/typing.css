@@ -1,0 +1,247 @@
+#unitLinks div.tableofcontents {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow:hidden;
+}
+
+#unitLinks {
+    /* #sidebar is 20% the width of #main. #unitLinks is within #content
+     * which itself is 80% the width of #main. We want #unitLinks to be
+     * 20% of the width of #main. Since #unitLinks is contained within
+     * #content, #unitLinks needs to be 25% the width of #content, so
+     * that it is 20% the width of #main. 25% of 80% is 20%. */
+    width: 25%;
+    float: left;
+    text-align: left;
+}
+
+#unitLinks img {
+    object-fit: cover;
+    overflow: hidden;
+    max-height: 100%;
+    min-height: 0;
+    min-width: 0;
+    width: 90%;
+    float: none;
+    height: 85%;
+    max-height: 90%;
+    max-height: 90vh;
+}
+
+.gridDiv {
+    float: none;
+    height: 90%;
+    min-height: 0;
+    min-width: 0;
+}
+
+.bookTitle {
+    display: inline-block;
+    padding-top:5px;
+    padding-bottom:5px;
+    width: 80%;
+    overflow: hidden;
+    max-height: 15px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: repeat(8, minmax(350px, 40vw));
+  padding: 10px;
+  width: 80% !important;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+#practicePanelWrapper {
+    width: 70%;
+    float: right;
+    text-align: center;
+    display: none;
+}
+
+#noscriptWrapper {
+    width: 75%;
+    float: right;
+    text-align: center;
+}
+
+#noscript {
+    margin: 10% 0%;
+    color: red;
+    font-weight: bold; 
+    border: 5px double red;
+    padding: 1.5em;
+    display: inline-block;
+}
+
+#unitLinks div {
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+#subunitLinks {
+    text-align: justify;
+    height: 24px;
+}
+
+#subunitLinks div.stretch {
+    width: 100%;
+    border: 0;
+}
+
+#subunitLinks div {
+    display: inline-block;
+    text-align: center;
+}
+
+#alternateUnitLinks div {
+    margin-right: 1em;
+    width: 20%;
+    text-align: center;
+    display: inline-block;
+}
+
+#unitLinks div, #alternateUnitLinks div {
+    background: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 5px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+#unitLinks .tableofcontents:hover .temp {
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+#unitLinks .tableofcontents:hover {
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+#unitLinks div.selected,
+#subunitLinks div.selected,
+#alternateUnitLinks div.selected {
+    background: #FFE5F3 !important;
+    border: 1px solid #FAD;
+}
+
+#practicePanel {
+    display: inline-block;
+}
+
+#previousLink, #nextLink {
+    width: 0.5em;
+    display: inline-block;
+    vertical-align: top;
+    font-family: verdana;
+}
+
+#practicePane {
+    display: inline-block;
+}
+
+#target {
+    margin-top: 3%;
+    font-family: monospace;
+    display: inline-block;
+    padding: 5px;
+    font-size: 30px;
+    line-height: 48px;
+}
+
+#target, span.targetChar {
+    border: 3px solid #333333;
+    border-radius: 2px;
+}
+
+#feedbackPane {
+    margin: 3% 0;
+    overflow: hidden;
+}
+
+#statusPane {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+    vertical-align: top;
+}
+
+#progressPane {
+    display: inline-block;
+    width: 30%;
+}
+
+#resultPane {
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    vertical-align: top;
+}
+
+#status {
+    color: #008000;
+    font-weight: bold;
+}
+
+#restartLink {
+    visibility: hidden;
+}
+
+#input {
+    width: 95%;
+}
+
+#progressBar {
+    width: 100%;
+}
+
+#guidePane {
+    margin-top: 3%;
+}
+
+#guide {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+/* State changes */
+.error #target {
+    background: #ff8888;
+}
+
+.completed #target, .completed #input {
+    background: #dddddd;
+}
+
+.completed span.targetChar {
+    border: 3px solid #dddddd;
+}
+
+.error #status {
+    color: #ff0000;
+}
+
+#smiley {
+    font-family: verdana;
+}
+
+#alternateUnitLinks {
+    width: 95%;
+    margin-top: 1%;
+    display: inline-block;
+}
+
+#update {
+    width: 80%;
+}
+
+#update a {
+    margin-right: 2em;
+}

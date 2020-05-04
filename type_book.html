@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typable - Typing Books</title>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/typing.css">
+<link rel="stylesheet" href="css/keyboard.css">
+<script src="js/util.js"></script>
+<script src="resources/1.js"></script>
+<script src="resources/2.js"></script>
+<script src="resources/3.js"></script>
+<script src="js/units.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/tutor.js"></script>
+<script>
+
+// Start tutor, set version and check for updates
+window.onload = function()
+{
+    Tutor.init()
+
+    if (typeof Update == 'object' && typeof Update.check == 'function') {
+        Update.check()
+    }
+}
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+    <h1><a href="index.html">Typable</a></h1>
+    <h2 id="unitTitle"></h2>
+    <div id="navigation">
+        <a href="index.html">Books</a>
+        <a href="type_book.html">Type</a>
+        <a href="about.html">About</a>
+    </div>
+</div>
+
+<!-- Main -->
+<div id="mainWrapper">
+<div id="main">
+    <div id="content">
+        <div id="unitLinks"></div>
+
+        <div id="practicePanelWrapper">
+        <div id="practicePanel">
+            <div id="previousLink">
+            </div>
+
+            <div id="practicePane">
+
+                <div id="subunitLinks">
+                    <div class="stretch"></div>
+                </div> <!-- End subunitLinks -->
+
+                <div id="target"></div>
+
+                <div id="feedbackPane">
+                    <div id="statusPane">
+                        <div id="status"></div>
+                        <div id="remark"></div>
+                        <div id="advice"></div>
+                    </div>
+                    <div id="progressPane">
+                        <div id="progress">
+                            <progress id="progressBar" value="0" max="100">
+                            </progress>
+                            <div>
+                                <span id="progressPercent"></span>
+                            </div>
+                        </div>
+                        <div id="restartLink">
+                            <a href="#restart" title="Start over">Restart</a>
+                        </div>
+                    </div>
+                    <div id="resultPane">
+                        <div id="speed"></div>
+                        <div id="error"></div>
+                        <div id="smiley"></div>
+                    </div>
+                </div> <!-- End feedbackPane -->
+
+                <div id="inputPane">
+                    <textarea id="input" rows="5" autocomplete="off"
+                              spellcheck="false"></textarea>
+                </div> <!-- End inputPane -->
+
+                <div id="alternateUnitLinks">
+                </div>
+
+            </div> <!-- End practicePane -->
+
+            <div id="nextLink">
+            </div>
+        </div> <!-- End practicePanel -->
+        <div id="guide">
+                  <ul id="keyboard" class="hints">
+                  <li id="row_AE">
+                    <ul>
+                      <li id="key_TLDE" class="left5">
+                        <strong> ~ </strong>
+                        <em> ` </em>
+                      </li>
+                      <li id="key_AE01" class="left5">
+                        <strong> ! </strong>
+                        <em> 1 </em>
+                      </li>
+                      <li id="key_AE02" class="left4">
+                        <strong> @ </strong>
+                        <em> 2 </em>
+                      </li>
+                      <li id="key_AE03" class="left3">
+                        <strong> # </strong>
+                        <em> 3 </em>
+                      </li>
+                      <li id="key_AE04" class="left2">
+                        <strong> $ </strong>
+                        <em> 4 </em>
+                      </li>
+                      <li id="key_AE05" class="left2">
+                        <strong> % </strong>
+                        <em> 5 </em>
+                      </li>
+                      <li id="key_AE06" class="right2">
+                        <strong> ^ </strong>
+                        <em> 6 </em>
+                      </li>
+                      <li id="key_AE07" class="right2">
+                        <strong> & </strong>
+                        <em> 7 </em>
+                      </li>
+                      <li id="key_AE08" class="right3">
+                        <strong> * </strong>
+                        <em> 8 </em>
+                      </li>
+                      <li id="key_AE09" class="right4">
+                        <strong> ( </strong>
+                        <em> 9 </em>
+                      </li>
+                      <li id="key_AE10" class="right5">
+                        <strong> ) </strong>
+                        <em> 0 </em>
+                      </li>
+                      <li id="key_AE11" class="right5">
+                        <strong> _ </strong>
+                        <em> - </em>
+                      </li>
+                      <li id="key_AE12" class="right5">
+                        <strong> + </strong>
+                        <em> = </em>
+                        </li>
+                      <li id="key_BKSP" class="specialKey">
+                        <em> &#x2190; </em>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="row_AD">
+                    <ul>
+                      <li id="key_TAB" class="specialKey">
+                        <em> &#x21b9; </em>
+                      </li>
+                      <li id="key_AD01" class="left5">
+                        <strong> Q </strong>
+                        <em> q </em>
+                      </li>
+                      <li id="key_AD02" class="left4">
+                        <strong> W </strong>
+                        <em> w </em>
+                      </li>
+                      <li id="key_AD03" class="left3">
+                        <strong> E </strong>
+                        <em> e </em>
+                      </li>
+                      <li id="key_AD04" class="left2">
+                        <strong> R </strong>
+                        <em> r </em>
+                      </li>
+                      <li id="key_AD05" class="left2">
+                        <strong> T </strong>
+                        <em> t </em>
+                      </li>
+                      <li id="key_AD06" class="right2">
+                        <strong> Y </strong>
+                        <em> y </em>
+                      </li>
+                      <li id="key_AD07" class="right2">
+                        <strong> U </strong>
+                        <em> u </em>
+                      </li>
+                      <li id="key_AD08" class="right3">
+                        <strong> I </strong>
+                        <em> i </em>
+                      </li>
+                      <li id="key_AD09" class="right4">
+                        <strong> O </strong>
+                        <em> o </em>
+                      </li>
+                      <li id="key_AD10" class="right5">
+                        <strong> P </strong>
+                        <em> p </em>
+                      </li>
+                      <li id="key_AD11" class="right5">
+                        <strong> { </strong>
+                        <em> [ </em>
+                      </li>
+                      <li id="key_AD12" class="right5">
+                        <strong> } </strong>
+                        <em> ] </em>
+                      </li>
+                      <li id="key_BKSL" class="right5">
+                        <strong> | </strong>
+                        <em> \ </em>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="row_AC">
+                    <ul>
+                      <li id="key_CAPS" class="specialKey">
+                        <em> &#x21ea; </em>
+                      </li>
+                      <li id="key_CAPS105" class="hiddenKey">
+                        &nbsp;
+                      </li>
+                      <li id="key_AC01" class="left5">
+                        <strong> A </strong>
+                        <em> a </em>
+                      </li>
+                      <li id="key_AC02" class="left4">
+                        <strong> S </strong>
+                        <em> s </em>
+                      </li>
+                      <li id="key_AC03" class="left3">
+                        <strong> D </strong>
+                        <em> d </em>
+                      </li>
+                      <li id="key_AC04" class="left2">
+                        <strong> F </strong>
+                        <em> f </em>
+                      </li>
+                      <li id="key_AC05" class="left2">
+                        <strong> G </strong>
+                        <em> g </em>
+                      </li>
+                      <li id="key_AC06" class="right2">
+                        <strong> H </strong>
+                        <em> h </em>
+                      </li>
+                      <li id="key_AC07" class="right2">
+                        <strong> J </strong>
+                        <em> j </em>
+                      </li>
+                      <li id="key_AC08" class="right3">
+                        <strong> K </strong>
+                        <em> k </em>
+                      </li>
+                      <li id="key_AC09" class="right4">
+                        <strong> L </strong>
+                        <em> l </em>
+                      </li>
+                      <li id="key_AC10" class="right5">
+                        <strong> : </strong>
+                        <em> ; </em>
+                      </li>
+                      <li id="key_AC11" class="right5">
+                        <strong> " </strong>
+                        <em> ´ </em>
+                      </li>
+                      <li id="key_RTRN" class="specialKey">
+                        <em> &#x21b2; </em>
+                      </li>
+                      <li id="key_RTRN105" class="hiddenKey">
+                        &nbsp;
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="row_AB">
+                    <ul>
+                      <li id="key_LFSH" class="specialKey">
+                        <em> &#x21e7; </em>
+                      </li>
+                      <li id="key_LSGT" class="left5">
+                        <strong> \ </strong>
+                        <em> | </em>
+                      </li>
+                      <li id="key_AB01" class="left5">
+                        <strong> Z </strong>
+                        <em> z </em>
+                      </li>
+                      <li id="key_AB02" class="left4">
+                        <strong> X </strong>
+                        <em> x </em>
+                      </li>
+                      <li id="key_AB03" class="left3">
+                        <strong> C </strong>
+                        <em> c </em>
+                      </li>
+                      <li id="key_AB04" class="left2">
+                        <strong> V </strong>
+                        <em> v </em>
+                      </li>
+                      <li id="key_AB05" class="left2">
+                        <strong> B </strong>
+                        <em> b </em>
+                      </li>
+                      <li id="key_AB06" class="right2">
+                        <strong> N </strong>
+                        <em> n </em>
+                      </li>
+                      <li id="key_AB07" class="right2">
+                        <strong> M </strong>
+                        <em> m </em>
+                      </li>
+                      <li id="key_AB08" class="right3">
+                        <strong> &lt; </strong>
+                        <em> , </em>
+                      </li>
+                      <li id="key_AB09" class="right4">
+                        <strong> &gt; </strong>
+                        <em> . </em>
+                      </li>
+                      <li id="key_AB10" class="right5">
+                        <strong> ? </strong>
+                        <em> / </em>
+                      </li>
+                      <li id="key_RTSH" class="specialKey">
+                        <em> &#x21e7; </em>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="row_AA">
+                    <ul>
+                      <li id="key_LCTL" class="specialKey">
+                        <em> ctrl </em>
+                      </li>
+                      <li id="key_LWIN" class="specialKey">
+                        <em> super </em>
+                      </li>
+                      <li id="key_LALT" class="specialKey">
+                        <em> Alt </em>
+                      </li>
+                      <li id="key_SPCE" class="thumb">
+                        <em> </em>
+                      </li>
+                      <li id="key_RALT" class="specialKey">
+                        <em> AltGr </em>
+                      </li>
+                      <li id="key_RWIN" class="specialKey">
+                        <em> super </em>
+                      </li>
+                      <li id="key_MENU" class="specialKey">
+                        <em> menu </em>
+                      </li>
+                      <li id="key_RCTL" class="specialKey">
+                        <em> ctrl </em>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+          </div>
+
+        <div id="guidePane">
+            <div>
+                <a id="guideLink"></a>
+            </div>
+        </div> <!-- End guidePane -->
+        </div> <!-- End practicePanelWrapper -->
+
+        <noscript>
+        <div id="noscriptWrapper">
+            <div id="noscript">
+            JavaScript should be enabled to run this application.
+            </div>
+        </div>
+        </noscript>
+
+    </div> <!-- End content -->
+
+    <div id="sidebar">
+        <div id="rightSidebar"
+             data-width="239" data-show-faces="true" data-header="false"
+             data-stream="false" data-show-border="true"></div>
+    </div> <!-- End sidebar -->
+</div> <!-- End main -->
+</div> <!-- End mainWrapper -->
+
+<!-- Footer -->
+<div id="footer">
+    <div id="copyright">
+        <p>
+        Typable<br>
+        &copy; 2020 <a href="stogers.com">Stephanie Rogers</a>
+        </p>
+        </p>
+    </div> <!-- End copyright -->
+</div> <!-- End footer -->
+
+</body>
+</html>

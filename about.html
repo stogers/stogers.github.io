@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typable - Typing Books</title>
+<meta charset="utf-8">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/typing.css">
+<link rel="stylesheet" href="css/keyboard.css">
+<script src="js/util.js"></script>
+<script src="js/units.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/tutor.js"></script>
+<script>
+
+// Start tutor, set version and check for updates
+window.onload = function()
+{
+
+    if (typeof Update == 'object' && typeof Update.check == 'function') {
+        Update.check()
+    }
+}
+</script>
+</head>
+<body>
+
+<!-- Header -->
+<div id="header">
+    <h1><a href="index.html">Typable</a></h1>
+    <h2 id="unitTitle"></h2>
+    <div id="navigation">
+        <a href="index.html">Books</a>
+        <a href="type_book.html">Type</a>
+        <a href="about.html">About</a>
+    </div>
+</div>
+
+<!-- Main -->
+<div id="mainWrapper">
+<div id="main">
+    Typable - Read a book while learning to type!
+</div> <!-- End main -->
+</div> <!-- End mainWrapper -->
+
+<!-- Footer -->
+<div id="footer">
+    <div id="copyright">
+        <p>
+        Typable<br>
+        &copy; 2020 <a href="http://stogers.com">Stephanie Rogers</a>
+        </p>
+        </p>
+    </div> <!-- End copyright -->
+</div> <!-- End footer -->
+
+</body>
+</html>
