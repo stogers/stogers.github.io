@@ -1,5 +1,3 @@
-
-
 chapter_delimiter
 
 It is a truth universally acknowledged, that a single man in possession of
