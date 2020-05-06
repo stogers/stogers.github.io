@@ -37,6 +37,14 @@
     background-color: #fff;
 }
 
+.link {
+    color:#F08 !important;
+}
+
+.link:hover {
+    color: #666 !important;
+}
+
 #aboutWrapper {
     text-align: left;
     margin-left: auto;
